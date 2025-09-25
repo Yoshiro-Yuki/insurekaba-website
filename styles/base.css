@@ -1,0 +1,143 @@
+/* =========================
+   Global Styles
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #222222; 
+}
+
+/* =========================
+   Upper Section Styles
+========================= */
+.upper-section {
+    height: 99vh; 
+    margin: 0;
+    background: radial-gradient(circle at 50% 99%, #ffffff, #3a86f8, #2568db, #0017b2, #00012b, #000000);
+}
+
+.main-title {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    padding: 0;
+    min-height: 10vh; 
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+/* =========================
+   Text Styling
+========================= */
+h3 {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.icon.dynamic.smaller{
+    font-size: 15px;
+}
+
+/* =========================
+   Lower Section Styles
+========================= */
+.lower-section {
+    background-color: #222222;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;  
+}
+
+.lead-content {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    mix-blend-mode: difference;
+    text-align: center  ;
+}
+
+.footer-text.right,
+.footer-text.left {
+    color: aliceblue;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer p {
+    color: aliceblue;
+    text-align: center;
+    padding: 0;
+    margin: 6vh;
+}
+
+.footer-image{
+    width:50vh;
+    height: 50vh;
+    border-radius: 20px;
+    margin-left: 0; 
+}
+
+.credits {
+    height: 5vh;
+    background-color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: white;
+}
+
+/* =========================
+    Screen Responsiveness for footer section
+========================= */
+@media (max-width: 768px) {
+    .lower-row-one,
+    .lower-row-two,
+    .lower-row-three {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first{
+        order: 2;
+    }
+
+    .second{
+        order: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .lead-content { 
+        font-size: 98px;
+        font-weight: bold;
+        color: white;
+        margin: 0;
+        mix-blend-mode: difference;
+        text-align: left ;
+    }
+
+    .footer-text.right,
+    .footer-text.left {
+        font-size: 20px;
+        margin: 5%;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: left;
+    }
+} 
+
+

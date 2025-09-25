@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/popup.css">
+    
+    <!-- Page title -->
+    <title>InsureKaba?</title>
+</head>
+<body>
+    <!-- =========================
+         Upper Section (Main Area)
+    ========================= -->
+    <section class="upper-section">
+        <!-- Header with logo -->
+        <header class="main-title">
+            <img src="assets/logo.png" alt="InsureKaba Logo" width="600" height="500">
+        </header>
+
+        <!-- First row of boxes -->
+        <ul class="first-row">
+            <!-- Upload Files Box (Wide) -->
+            <li class="wide">
+                <button class="block-link button" id="openPopup-files">
+                    <!-- Icon for Upload -->
+                    <div class="upload-files">
+                        <div class="icon">
+                            <img src="assets/plus.png" alt="Upload Icon" class="icon image">
+                            <!-- Box text -->
+                            <h3>Upload Files</h3>
+                        </div>
+                    </div>
+                </button>
+            </li>
+
+            <!-- Check Files Box (Narrow) -->
+            <li class="narrow">
+                <a href="pages/check.html" class="block-link">
+                    <div class="check-files">
+                        <div class="icon dynamic smaller">
+                            <!-- Hover icon that replaces default icon -->
+                            <img src="assets/document.png" alt="Check files Icon" class="icon hover">
+                            <!-- Box text -->
+                            <h3>Check Files</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Second row of boxes -->
+        <ul class="second-row">
+            <!-- Health Tracker Box (Narrow) -->
+            <li class="narrow">
+                <a href="pages/tracker.html" class="block-link">
+                    <div class="health-tracker">
+                        <!-- Text displayed -->
+                        <h3 class="icon dynamic smaller">Health Tracker</h3>
+                        <!--     Hover icon for this box -->
+                        <img src="assets/activity-tracker.png" alt="Activity Icon" class="icon hover">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Profile Box (Wide) -->
+            <li class="wide">
+                <button class="block-link button" id="openPopup-profile">
+                <div class="profile">
+                    <div class="icon">
+                        <!-- Icon for Profile -->
+                        <img src="assets/profile-user.png" alt="Profile Icon" class="icon image">
+                        <!-- Box text -->
+                        <h3>Profile</h3>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- =========================
+         Footer Section
+    ========================= -->
+    <section class="lower-section">
+        <!-- Footer Row 1 -->
+        <div class="footer-row-one">
+            <ul class="lower-row-one">
+                <li>
+                    <h1 class="lead-content left">Safe</h1>
+                    <p class="footer-text right">
+                        Your policies and claims are stored on a decentralized blockchain, ensuring they can`t be lost, altered, or erased. Safety is built into every transaction, giving you lasting peace of mind.
+                    </p>
+                </li>
+                <li>
+                    <img src="assets/safe.jpg" alt="photo of security" class="footer-image">
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer Row 2 -->
+        <div class="footer-row-two">
+            <ul class="lower-row-two">
+                <li class="first">
+                    <img src="assets/secure.jpg" alt="photo of security" class="footer-image">
+                </li>
+                <li class="second">
+                    <h1 class="lead-content right">Secure</h1>
+                    <p class="footer-text left">
+                        Protected with advanced encryption and immutable blockchain records, your sensitive information stays private while still guaranteeing accuracy. Security is built into the foundation—no tampering, no fraud.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer Row 3 -->
+        <div class="footer-row-three">
+            <ul class="lower-row-three">
+                <li>
+                    <h1 class="lead-content left">Transparent</h1>
+                    <p class="footer-text right">
+                        Every policy and claim is traceable and verifiable on the blockchain, giving you clear insight into the entire process. Transparency means you can trust the system without hidden steps or surprises.
+                    </p>
+                </li>
+                <li>
+                    <img src="assets/transparency.jpg" alt="photo of security" class="footer-image">
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer general paragraph -->
+        <div class="footer-content">
+            <p>
+                Secure your future with confidence through our Insurance On-Chain App. Powered by blockchain technology, the platform ensures every policy and transaction is transparent, immutable, and verifiable in real time. Eliminate unnecessary paperwork, hidden fees, and delays with automated processes and instant claim verification. With full control over your coverage and faster, more reliable protection, our solution redefines insurance for the digital age.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========================
+         Credits Section
+         (Always at the bottom)
+    ========================= -->
+
+    <div class="credits">
+        <p><small>© 2024 InsureKaba — Built by InsureKaba Team.</small></p>
+    </div> 
+
+    <!-- =========================
+         popping window
+    ========================= -->
+
+    <!-- Popping Window -->
+    <div id="popup-file" class="popup-upload">
+        <h3 class="text-popup">Select File</h3>
+
+        <label for="fileInput" class="custom-file-upload">Upload File</label>
+        <input id="fileInput" type="file" accept=".pdf">
+        <p id="fileName"></p>
+        <button id="closePopup" class="popup-close">Close</button>
+    </div>
+
+    <div id="popup-profile" class="popup-profile">
+        <p class="text-popup prof">Profile</p>
+        <p class="text-popup info">Guest User</p>
+        <p class="text-popup info">0900-000-0000</p>
+        <p class="text-popup info">Manila, Philippines</p>
+        <p class="text-popup info">Guest_email@gmail.com</p>
+        <button id="closePopup-profile" class="closePopup-profile">Close</button>
+    </div>
+
+    <script src="scripts/PopupFiles.js"></script>
+    <script src="scripts/PopupProfile.js"></script>
+</body>
+</html>

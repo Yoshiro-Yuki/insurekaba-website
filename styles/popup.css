@@ -1,0 +1,89 @@
+/* =========================
+   Popup Styles for File Upload
+========================= */
+/* Default hidden */
+.popup-upload,
+.popup-profile {
+    display: none; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: #222222;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Active state */
+.popup-upload.active,
+.popup-profile.active {
+    display: flex; /* use flex so your layout still works */
+}
+
+.popup-upload { width: 35vh; }
+.popup-profile { width: 27vh; }
+
+
+.popup-close,
+.closePopup-profile {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #222222; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    width: auto;
+}
+
+.text-popup {
+    margin-top: 2vh;
+    font-size: 3vh;
+    color: aliceblue;
+    text-align: left;
+}
+
+.text-popup.prof {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.text-popup.info {
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: 4%;
+}
+
+#fileInput {
+    display: none;
+}
+
+.custom-file-upload {
+    background: #222222; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+}
+
+#fileName {
+    color: white;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.custom-file-upload:hover,
+.popup-close:hover,
+.closePopup-profile:hover {
+    background: #444; /* lighter shade instead of random blue */
+}
