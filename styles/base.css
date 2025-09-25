@@ -12,7 +12,8 @@ html, body {
    Upper Section Styles
 ========================= */
 .upper-section {
-    height: 99vh; 
+    min-height: 80vh; 
+    height: auto;
     margin: 0;
     background: radial-gradient(circle at 50% 99%, #ffffff, #3a86f8, #2568db, #0017b2, #00012b, #000000);
 }
@@ -21,6 +22,7 @@ html, body {
     display: flex;
     justify-content: center; 
     align-items: center;
+    width: auto;
 }
 
 .center-container {
@@ -32,6 +34,7 @@ html, body {
     margin-top: 5vh;
     margin-bottom: 3vh;
 }
+
 
 /* =========================
    Text Styling
@@ -115,6 +118,17 @@ h3 {
 
     .second{
         order: 1;
+    }
+
+    .footer-image {
+        width: 80%; /* scale images down */
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .footer-text {
+        margin: 0 5%;
+        text-align: center;
     }
 }
 

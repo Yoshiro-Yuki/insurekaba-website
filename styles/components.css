@@ -189,19 +189,18 @@ ul.second-row li.narrow {
     }
 }
 
-@media (min-width: 768px) {
-  /* First and second rows styling */
-    ul.first-row,
-    ul.second-row {
-        width: 70%;
-        display: flex;
-        gap: 16px;
-        list-style: none;
-        padding: 0;
-        justify-content: center;
-        margin: 0 auto;            /* horizontal margins */
-        margin-bottom: 3vh;
-    }
+@media (max-width: 768px) {
+  .first-row,
+  .second-row {
+    flex-direction: column;
+    gap: 10px; /* add spacing between buttons */
+    align-items: center;
+  }
+
+  .first-row li,
+  .second-row li {
+    width: 80%; /* buttons scale down */
+  }
 }
 
 @media (min-width: 992px) {
@@ -233,4 +232,3 @@ ul.second-row li.narrow {
         margin-bottom: 3vh;
     }
 } 
-
