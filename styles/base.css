@@ -15,6 +15,7 @@ html, body {
     min-height: 80vh; 
     height: auto;
     margin: 0;
+    padding-bottom: 10%;
     background: radial-gradient(circle at 50% 99%, #ffffff, #3a86f8, #2568db, #0017b2, #00012b, #000000);
 }
 
@@ -22,7 +23,16 @@ html, body {
     display: flex;
     justify-content: center; 
     align-items: center;
-    width: auto;
+    padding:10vh;
+    margin: 0;
+}
+
+.main-title img {
+    max-width: 80vh;
+    min-width: 35vh;
+    max-height: 700vh;
+    width:200%;
+    height: auto;
 }
 
 .center-container {
