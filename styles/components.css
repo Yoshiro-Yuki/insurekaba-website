@@ -68,11 +68,11 @@ ul.second-row li.narrow {
 
 .block-link.button {
     background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    appearance: none;
 }
 
 /* =========================
@@ -187,6 +187,8 @@ ul.second-row li.narrow {
         margin: 0 auto;            /* horizontal margins */
         margin-bottom: 3vh;
     }
+
+
 }
 
 @media (max-width: 768px) {
@@ -200,6 +202,10 @@ ul.second-row li.narrow {
   .first-row li,
   .second-row li {
     width: 80%; /* buttons scale down */
+  }
+
+  .icon.hover{
+    display: block;
   }
 }
 
