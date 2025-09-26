@@ -1,11 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Files</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Records & Claims</title>
+
+  <link rel="stylesheet" href="../styles/check.css">
+
 </head>
 <body>
-    <h1>Check Files</h1>
+
+  <h1>Medical Records & Claims</h1>
+
+  <!-- File Upload Form -->
+  <form id="uploadForm">
+    <h2>Upload Medical Record</h2>
+    <input type="file" name="recordfile" required class="input-file">
+    <button type="submit">Upload</button>
+    <p id="uploadResult"></p>
+  </form>
+
+  <!-- Claim Submission Form -->
+  <form id="claimForm">
+    <h2>Submit Claim</h2>
+    <input type="text" name="userId" placeholder="User ID" required>
+    <textarea name="details" placeholder="Claim details" required></textarea>
+    <select name="attachedFileHash" id="attachedFileHash" required>
+      <option value="">Select file to attach</option>
+    </select>
+    <button type="submit">Submit Claim</button>
+    <p id="claimResult"></p>
+  </form>
+
+  <!-- Display all records -->
+  <h2>All Uploaded Records</h2>
+  <ul id="recordsList"></ul>
+
+  <!-- Display all claims -->
+  <h2>All Claims</h2>
+  <ul id="claimsList"></ul>
+
+  <script>
+    // ------------------------
+    // File Upload
+    // ------------------------
+    const uploadForm = document.getElementById('uploadForm');
+    const uploadResult = document.getElementById('uploadResult');
+    let lastUploadedFileHash = null;
+
+    uploadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(uploadForm);
+      const res = await fetch('/upload-record', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (res.ok) {
+        uploadResult.textContent = `Success! File: ${data.filename}, Hash: ${data.hash}`;
+        lastUploadedFileHash = data.hash;
+        loadRecords();
+        updateFileDropdown();
+      } else {
+        uploadResult.textContent = `Error: ${data.error}`;
+      }
+    });
+
+    // ------------------------
+    // Update file dropdown
+    // ------------------------
+    function updateFileDropdown() {
+      const select = document.getElementById('attachedFileHash');
+      select.innerHTML = '<option value="">Select file to attach</option>';
+      fetch('/get-records')
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(r => {
+            const opt = document.createElement('option');
+            opt.value = r.hash;
+            opt.textContent = r.filename;
+            select.appendChild(opt);
+          });
+        });
+    }
+
+    // ------------------------
+    // Claim Submission
+    // ------------------------
+    const claimForm = document.getElementById('claimForm');
+    const claimResult = document.getElementById('claimResult');
+
+    claimForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = {
+        userId: claimForm.userId.value,
+        details: claimForm.details.value,
+        attachedFileHash: claimForm.attachedFileHash.value
+      };
+      const res = await fetch('/submit-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json();
+      if (res.ok) {
+        claimResult.textContent = `Claim submitted! ID: ${data.claimId}, Status: ${data.status}`;
+        loadClaims();
+      } else {
+        claimResult.textContent = `Error: ${data.error}`;
+      }
+    });
+
+    // ------------------------
+    // Fetch and display all records
+    // ------------------------
+    async function loadRecords() {
+      const res = await fetch('/get-records');
+      const data = await res.json();
+      const list = document.getElementById('recordsList');
+      list.innerHTML = '';
+      data.forEach(r => {
+        const li = document.createElement('li');
+        li.textContent = `${r.filename} (Hash: ${r.hash})`;
+        list.appendChild(li);
+      });
+    }
+
+    // ------------------------
+    // Fetch and display all claims
+    // ------------------------
+    async function loadClaims() {
+      const res = await fetch('/get-all-claims');   
+      const data = await res.json();
+      const list = document.getElementById('claimsList');
+      list.innerHTML = '';
+      data.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = `ID: ${c.id}, User: ${c.userId}, Status: ${c.status}, Details: ${c.details}, File Hash: ${c.attachedFileHash}`;
+        list.appendChild(li);
+      });
+    }
+
+    // Load data on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadRecords();
+      loadClaims();
+    });
+  </script>
+
 </body>
 </html>

@@ -28,6 +28,17 @@
 .popup-upload { width: 35vh; }
 .popup-profile { width: 27vh; }
 
+.status.none {
+    color: white;
+}
+
+.status.pending {
+    color: yellow;
+}
+
+.status.approved {
+    color: greenyellow;
+}
 
 .popup-close,
 .closePopup-profile {
