@@ -187,8 +187,6 @@ ul.second-row li.narrow {
         margin: 0 auto;            /* horizontal margins */
         margin-bottom: 3vh;
     }
-
-
 }
 
 @media (max-width: 768px) {
