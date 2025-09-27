@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
 
   <!-- Background video -->
   <video autoplay muted loop id="bg-video">
-    <source src="../assets/background.mp4" type="video/mp4">
+    <source src="assets/background.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
 
@@ -27,7 +27,7 @@
       </form>
 
       <div class="login-logo">
-        <img src="../assets/login-logo.png" alt="login logo of insure kaba">
+        <img src="assets/login-logo.png" alt="login logo of insure kaba">
       </div>
     </div>
   </div>
@@ -37,14 +37,14 @@
       e.preventDefault();
 
       const username = document.getElementById("username").value.trim().toLowerCase();
-      // password is ignored for now
+      // password ignored for now
 
       if (username === "admin") {
-        window.location.href = "pages/admin.html";      // inside /pages/
+        window.location.href = "admin.html";      // same /pages/ folder
       } else if (username === "guest") {
-        window.location.href = "pages/guest.html";   // back to site root
+        window.location.href = "guest.html";      // same /pages/ folder
       } else if (username === "hospital") {
-        window.location.href = "pages/hospital.html";   // inside /pages/
+        window.location.href = "hospital.html";   // same /pages/ folder
       } else {
         alert("Invalid user. Try admin, guest, or hospital.");
       }
