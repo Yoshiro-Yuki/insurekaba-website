@@ -1,0 +1,146 @@
+/* =========================
+   General Reset & Base Styles
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222222;
+    color: white;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* =========================
+   Page Title
+========================= */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+label {
+    color: #222222;
+}
+
+/* =========================
+   User Selection
+========================= */
+.user-selection {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-selection label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.user-selection select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: white;
+}
+
+/* =========================
+   File Upload Form
+========================= */
+form#uploadForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form#uploadForm label {
+    font-weight: bold;
+}
+
+form#uploadForm input[type="file"] {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+form#uploadForm button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#uploadForm button:hover {
+    background-color: #0056b3;
+}
+
+#uploadResult {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+#fileInput {
+    color: #222222;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .user-selection, form#uploadForm {
+        width: 100%;
+        padding: 15px;
+    }
+
+    form#uploadForm button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .user-selection label, form#uploadForm label {
+        font-size: 0.95rem;
+    }
+
+    .user-selection select, form#uploadForm input[type="file"] {
+        font-size: 0.9rem;
+    }
+
+    form#uploadForm button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

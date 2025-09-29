@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tracker</title>
+  <link rel="stylesheet" href="../styles/tracker.css">
 </head>
 <body>
-    <h1>Health Tracker</h1>
+  <div class="parent">
+    <div class="streak-section">
+      <p class="title-label">Streak</p>
+      <div class="streak-display">
+        <h1 id="streak">Day 1</h1>
+        <span id="fire">🪵</span>
+      </div>
+    </div>
+
+    <div class="task-section" id="task-section">
+      <p class="title-label">Tasks:</p>
+      <!-- tasks will be injected here -->
+    </div>
+  </div>
+
+  <div class="status-board">
+    <h1 class="title-label">Status board</h1>
+    <p class="status-info" id="userName">User Name: Guest User</p>
+    <p class="status-info" id="taskCompleted">Number of task completed: 0</p>
+    <p class="status-info" id="highestStreak">Highest Day Streak: 0</p>
+  </div>
+
+  <div class="lower-section">
+    <h2>What is the health tracker?</h2>
+    <p>
+        The Health Tracker is a simple guide designed to help you build and maintain a healthier lifestyle.  
+        It`s not a strict medical tool, but rather a daily reminder to stay consistent with small habits that  
+        improve your well-being—like drinking enough water, getting enough sleep, exercising regularly,  
+        and taking care of your mental health. By keeping track of these habits, you can slowly create a  
+        routine that supports long-term balance and wellness.
+    </p>
+
+
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="../scripts/tracker.js"></script>
 </body>
 </html>

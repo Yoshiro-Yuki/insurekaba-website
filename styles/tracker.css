@@ -1,0 +1,118 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url("../assets/tracker-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.parent {
+  background: rgba(34, 34, 34, 0.75); 
+  padding: 20px; 
+  margin-bottom: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 80vh;
+  width: 80%;
+}
+
+.streak-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #444;
+}
+
+.streak-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* space between number and emoji */
+}
+
+#fire {
+  font-size: 50px;
+  transition: all 0.5s ease;
+}
+
+.task-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-box {
+  width: 300px;
+  background: #242424;
+  color: aliceblue;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.task-box input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.parent .title-label {
+  font-weight: normal;
+  margin-bottom: 5px;
+  margin-left: 2%;
+  text-align: left;
+  color: aliceblue;
+}
+
+#streak {
+  color: white;
+}
+
+.status-board{
+  background: rgba(34, 34, 34, 0.75); 
+  padding: 20px; 
+  margin-bottom: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 80vh;
+  width: 80%;
+  text-align: center;
+  color: aliceblue;
+}
+
+.status-info {
+  text-align: left;
+  margin:5%;
+}
+
+.lower-section {
+  background-color: #242424;
+  color: white;
+  width: 100%;          /* same width as parent */
+  height: 100%;
+  padding: 15px;
+  text-align: left;
+  margin-top: 18vh;  /* gap below parent */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.lower-section p {
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+.lower-section h2 {
+    margin-top: 5%;
+    margin-left: 3%;
+}
+

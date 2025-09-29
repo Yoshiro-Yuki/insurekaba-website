@@ -1,169 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Information -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/popup.css">
-    
-    <!-- Page title -->
-    <title>InsureKaba?</title>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-    <!-- =========================
-         Upper Section (Main Area)
-    ========================= -->
-    <section class="upper-section">
-        <!-- Header with logo -->
-        <header class="main-title">
-            <img src="assets/logo.png" alt="InsureKaba Logo">
-        </header>
+  <!-- Background video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/background.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <!-- Centered login container -->
+  <div class="parent">
+    <div class="login-window">
+      <!-- Login Form -->
+      <form class="login-form" id="loginForm">
+        <h2>Login</h2>
+        <label for="wallet">Wallet Address or Username:</label>
+        <input type="text" id="wallet" name="wallet" placeholder="0x... or username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>  
+        <button type="button" id="showCreateForm">Create Account</button>
+      </form>
 
-        <!-- First row of boxes -->
-        <ul class="first-row">
-            <!-- Upload Files Box (Wide) -->
-            <li class="wide">
-                <button class="block-link button" id="openPopup-files">
-                    <!-- Icon for Upload -->
-                    <div class="upload-files">
-                        <div class="icon">
-                            <img src="assets/document.png" alt="Upload Icon" class="icon image">
-                            <!-- Box text -->
-                            <h3>Claim Status</h3>
-                        </div>
-                    </div>  
-                </button>
-            </li>   
+      <!-- Create Account Form (Initially Hidden) -->
+      <form class="create-form" id="createForm" style="display: none;">
+        <h2>Create Account</h2>
+        <label for="createEmail">Email Address:</label>
+        <input type="email" id="createEmail" name="createEmail" placeholder="your.email@example.com" required>
+        
+        <label for="createWallet">Wallet Address:</label>
+        <input type="text" id="createWallet" name="createWallet" placeholder="0x..." required>
+        
+        <label for="createPassword">Password:</label>
+        <input type="password" id="createPassword" name="createPassword" required>
+        
+        <label for="createName">Full Name (Optional):</label>
+        <input type="text" id="createName" name="createName" placeholder="John Doe">
+        
+        <button type="submit">Create Account</button>
+        <button type="button" id="showLoginForm">Back to Login</button>
+      </form>
 
-            <!-- Check Files Box (Narrow) -->
-            <li class="narrow">
-                <a href="pages/check.html" class="block-link">
-                    <div class="check-files">
-                        <div class="icon dynamic smaller">
-                            <!-- Hover icon that replaces default icon -->
-                            <img src="assets/folder.png" alt="Check files Icon" class="icon hover">
-                            <!-- Box text -->
-                            <h3>Check Files</h3>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-        <!-- Second row of boxes -->
-        <ul class="second-row">
-            <!-- Health Tracker Box (Narrow) -->
-            <li class="narrow">
-                <a href="pages/tracker.html" class="block-link">
-                    <div class="health-tracker">
-                        <!--     Hover icon for this box -->
-                        <img src="assets/activity-tracker.png" alt="Activity Icon" class="icon hover">
-                        <!-- Text displayed -->
-                        <h3 class="icon dynamic smaller">Health Tracker</h3>
-                    </div>
-                </a>
-            </li>
-
-            <!-- Profile Box (Wide) -->
-            <li class="wide">
-                <button class="block-link button" id="openPopup-profile">
-                <div class="profile">
-                    <div class="icon">
-                        <!-- Icon for Profile -->
-                        <img src="assets/profile-user.png" alt="Profile Icon" class="icon image">
-                        <!-- Box text -->
-                        <h3>Profile</h3>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <!-- =========================
-         Footer Section
-    ========================= -->
-    <section class="lower-section">
-        <!-- Footer Row 1 -->
-        <div class="footer-row-one">
-            <ul class="lower-row-one">
-                <li>
-                    <h1 class="lead-content left">Safe</h1>
-                    <p class="footer-text right">
-                        Your policies and claims are stored on a decentralized blockchain, ensuring they can`t be lost, altered, or erased. Safety is built into every transaction, giving you lasting peace of mind.
-                    </p>
-                </li>
-                <li>
-                    <img src="assets/safe.jpg" alt="photo of security" class="footer-image">
-                </li>
-            </ul>
-        </div>
-
-        <!-- Footer Row 2 -->
-        <div class="footer-row-two">
-            <ul class="lower-row-two">
-                <li class="first">
-                    <img src="assets/secure.jpg" alt="photo of security" class="footer-image">
-                </li>
-                <li class="second">
-                    <h1 class="lead-content right">Secure</h1>
-                    <p class="footer-text left">
-                        Protected with advanced encryption and immutable blockchain records, your sensitive information stays private while still guaranteeing accuracy. Security is built into the foundation—no tampering, no fraud.
-                    </p>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Footer Row 3 -->
-        <div class="footer-row-three">
-            <ul class="lower-row-three">
-                <li>
-                    <h1 class="lead-content left">Transparent</h1>
-                    <p class="footer-text right">
-                        Every policy and claim is traceable and verifiable on the blockchain, giving you clear insight into the entire process. Transparency means you can trust the system without hidden steps or surprises.
-                    </p>
-                </li>
-                <li>
-                    <img src="assets/transparency.jpg" alt="photo of security" class="footer-image">
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- =========================
-         Credits Section
-         (Always at the bottom)
-    ========================= -->
-
-    <div class="credits">
-        <p><small>© 2024 InsureKaba — Built by InsureKaba Team.</small></p>
-    </div> 
-
-    <!-- =========================
-         popping window
-    ========================= -->
-
-    <!-- Popping Window -->
-    <div id="popup-file" class="popup-upload">
-        <h3 class="text-popup">Claim Status</h3>
-        <h4 class="status none">No Claims</h4>
-        <button id="closePopup" class="popup-close">Close</button>
+      <div class="login-logo">
+        <img src="assets/login-logo.png" alt="login logo of insure kaba">
+      </div>
     </div>
+  </div>
 
-    <div id="popup-profile" class="popup-profile">
-        <p class="text-popup prof">Profile</p>
-        <p class="text-popup info">Guest User</p>
-        <p class="text-popup info">0900-000-0000</p>
-        <p class="text-popup info">Manila, Philippines</p>
-        <p class="text-popup info">Guest_email@gmail.com</p>
-        <button id="closePopup-profile" class="closePopup-profile">Close</button>
-    </div>
+  <script>
+    const API_BASE = "http://localhost:3000";
 
-    <script src="scripts/PopupFiles.js"></script>
-    <script src="scripts/PopupProfile.js"></script>
+    // Form switching
+    document.getElementById("showCreateForm").addEventListener("click", function() {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("createForm").style.display = "block";
+    });
+
+    document.getElementById("showLoginForm").addEventListener("click", function() {
+      document.getElementById("createForm").style.display = "none";
+      document.getElementById("loginForm").style.display = "block";
+    });
+
+    // ===== LOGIN HANDLER =====
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const walletOrUsername = document.getElementById("wallet").value.trim();
+      const password = document.getElementById("password").value.trim();
+      
+      if (!walletOrUsername || !password) {
+        alert("Please enter wallet address/username and password");
+        return;
+      }
+      
+      try {
+        // Send both fields - backend will handle the logic
+        const response = await fetch(`${API_BASE}/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            walletAddress: walletOrUsername.startsWith('0x') ? walletOrUsername : null,
+            username: !walletOrUsername.startsWith('0x') ? walletOrUsername : null,
+            password: password
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          alert(data.error || "Login failed");
+          return;
+        }
+        
+        // Save session info
+        localStorage.setItem("userId", data.userId);
+        localStorage.setItem("walletAddress", data.walletAddress);
+        localStorage.setItem("role", data.role);
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("tokenBalance", data.token_balance || 0);
+        
+        // Redirect by role
+        switch (data.role) {
+          case "admin-philhealth":
+            window.location.href = "pages/admin.html";
+            break;
+          case "admin-hospital":
+            window.location.href = "pages/hospital.html";
+            break;
+          case "user":
+            window.location.href = "pages/guest.html";
+            break;
+          default:
+            alert("Unknown role: " + data.role);
+        }
+      } catch (err) {
+        console.error("Login error:", err);
+        alert("Server error. Please try again later.");
+      }
+    });
+
+    // ===== CREATE ACCOUNT HANDLER =====
+    document.getElementById("createForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      
+      const email = document.getElementById("createEmail").value.trim();
+      const walletAddress = document.getElementById("createWallet").value.trim();
+      const password = document.getElementById("createPassword").value.trim();
+      const name = document.getElementById("createName").value.trim();
+      
+      if (!email || !walletAddress || !password) {
+        alert("Please fill in all required fields");
+        return;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+      }
+      
+      // Validate wallet address format
+      if (!walletAddress.startsWith('0x') || walletAddress.length !== 42) {
+        alert("Please enter a valid Ethereum wallet address (42 characters starting with 0x)");
+        return;
+      }
+      
+      // Validate password strength
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long");
+        return;
+      }
+      
+      try {
+        const response = await fetch(`${API_BASE}/create-user`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email,
+            walletAddress: walletAddress,
+            password: password,
+            role: "user",
+            name: name || null
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          alert(data.error || "Account creation failed");
+          return;
+        }
+        
+        alert(`Account created successfully!\nUsername: ${data.username}\nYou can now log in with your wallet address or username.`);
+        
+        // Switch back to login form and clear create form
+        document.getElementById("createForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("createForm").reset();
+        
+      } catch (err) {
+        console.error("Create account error:", err);
+        alert("Server error. Please try again later.");
+      }
+    });
+  </script>
 </body>
 </html>

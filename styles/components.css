@@ -184,7 +184,7 @@ ul.second-row li.narrow {
         list-style: none;
         padding: 0;
         justify-content: center;
-        margin: 0 auto;            /* horizontal margins */
+        margin: 0 auto;       
         margin-bottom: 3vh;
     }
 }
@@ -205,6 +205,13 @@ ul.second-row li.narrow {
   .icon.hover{
     display: block;
   }
+
+}
+
+@media (min-width: 768px) {
+    .upper-section {
+        height: 95%;
+    }
 }
 
 @media (min-width: 992px) {
